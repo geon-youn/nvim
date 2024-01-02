@@ -43,4 +43,29 @@ return require('packer').startup(function(use)
   }
 
   use('theprimeagen/vim-be-good')
+
+  use({
+      "epwalsh/obsidian.nvim",
+      tag = "*",  -- recommended, use latest release instead of latest commit
+      requires = {
+          "nvim-lua/plenary.nvim", -- required
+          'hrsh7th/nvim-cmp', -- autocomplete
+          'nvim-telescope/telescope.nvim', -- search functionality
+          'nvim-treesitter/nvim-treesitter', -- syntax highlight
+      },
+      config = function()
+          require("obsidian").setup({
+              workspaces = {
+                  {
+                      name = 'school',
+                      path = '~/vaults/school',
+                  },
+                  {
+                      name = "personal",
+                      path = "~/vaults/personal",
+                  },
+              },
+          })
+      end,
+  })
 end)
