@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
   use('nvim-treesitter/playground')
-  
+
   use('theprimeagen/harpoon')
 
   use('mbbill/undotree')
@@ -53,19 +53,5 @@ return require('packer').startup(function(use)
           'nvim-telescope/telescope.nvim', -- search functionality
           'nvim-treesitter/nvim-treesitter', -- syntax highlight
       },
-      config = function()
-          require("obsidian").setup({
-              workspaces = {
-                  {
-                      name = 'school',
-                      path = '~/vaults/school',
-                  },
-                  {
-                      name = "personal",
-                      path = "~/vaults/personal",
-                  },
-              },
-          })
-      end,
   })
 end)
